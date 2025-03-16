@@ -29,14 +29,22 @@ Simplemente abre el archivo index.html en tu navegador preferido.
  
 ## Detalles adicionales
 * **Entrada con ENTER:** Se añadió un event listener al input que verifica si la tecla presionada es ENTER y, en tal caso, llama a agregarAmigo().
+* Se verifica que el nombre de la persona ingresada no exista, si eso sucede se alerta de la situación y se mantiene el texto digitado para dar la oportunidad de corregir y no tener que escribirlo nuevamente-
 * **Eliminación del amigo sorteado:** La función sortearAmigo() elimina el amigo sorteado usando splice() y actualiza la lista.
+* No se ocultan los nombres de las personas esperando ser sorteadas porque el control de lo seleccionado lo hace la máquina y no se puede escoger manualmente.
 * **Botones manejo CSV:**
+    * Los CSV manejan una línea equivale a un nombre para dar la oportunidad de manejar personas con el mismno nombre pero distinto apellido o alias.
     * El botón de exportación genera un archivo CSV con todos los nombres actuales, se usa la palabra amigos más la fecha de la exportación para generar el nombre en forma automática.
     * La importación se realiza a través de un input de tipo file (oculto) que se activa mediante un label estilizado. Durante la importación se agregan sólo los nombres que sean válidos y que no sean duplicados.
     * **Estado del botón de sorteo:** La función controlarEstadoSorteo() se encarga de habilitar o deshabilitar el botón según la cantidad de nombres en la lista. Se ejecuta tanto al actualizar la lista como al cargar la página.
     * **Puntos clave del HTML:**
         * Cada botón tiene únicamente su <img> y se ha añadido el atributo title para mostrar el tooltip.
          * El botón de sorteo, exportar e importar (a través del label) muestran los textos "sortear amigo", "descargar CSV" y "cargar CSV" respectivamente.
-        
+
+## Ideas para mejorar
+* La mejora más importante es que se debería mantener una lista separada para ir marcando las personas que está esperando el resultado y no parearla con ella misma.
+* Permitir solo presionar una vez, para evitar que una persona por equivocación sortee dos veces por error.
+* Permitir una segunda pantalla que muestre al resto de los participantes que la persona ya sorteó su amigo secreto, no mostrando en nombre seleccionado :-)
+
 ## Conclusión
 Esta aplicación permite llevar a cabo un sorteo de amigo secreto de manera interactiva y sencilla. Puedes personalizarla o ampliarla según tus necesidades, ya que trabaja con tecnologías web básicas y de uso muy extendido.
